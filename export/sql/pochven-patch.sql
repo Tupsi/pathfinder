@@ -1,8 +1,3 @@
-# Add Trig space to system types
-INSERT INTO `system_type` VALUES
-(4, '2021-02-21 17:30:00', '2021-02-21 17:30:00', 1, 't-space');
-
-
 # Add the new Pochven region
 INSERT INTO `region` VALUES
 (10000070,'2020-10-23 00:00:00','2020-10-23 00:00:00','Pochven','');
