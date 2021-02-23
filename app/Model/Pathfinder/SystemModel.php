@@ -84,6 +84,11 @@ class SystemModel extends AbstractMapTrackingModel {
             'default' => '',
             'activity-log' => true
         ],
+        'tag' => [
+            'type' => Schema::DT_VARCHAR128,
+            'nullable' => false,
+            'default' => '',
+        ],
         'typeId' => [
             'type' => Schema::DT_INT,
             'index' => true,
@@ -172,6 +177,7 @@ class SystemModel extends AbstractMapTrackingModel {
             $data->mapId                    = is_object($this->mapId) ? $this->get('mapId', true) : 0;
             $data->systemId                 = $this->systemId;
             $data->alias                    = $this->alias;
+            $data->tag                      = $this->tag;
 
             if(is_object($this->typeId)){
                 $data->type                 = $this->typeId->getData();
@@ -711,6 +717,14 @@ class SystemModel extends AbstractMapTrackingModel {
     public function isAbyss() : bool {
         return ($this->typeId->id === 3 && $this->security === 'A');
     }
+    
+    /**
+     * check whether this system is in t-space
+     * @return bool
+     */
+    public function isTriglavian() : bool {
+        return ($this->typeId->id === 4 && $this->security === 'T');
+    }
 
     /**
      * check whether this system is in drifter-space
@@ -789,6 +803,9 @@ class SystemModel extends AbstractMapTrackingModel {
             case 'L':
             case '0.0':
                 $typeId = 2; // k-space
+                break;
+            case 'T':
+                $typeId = 4; // t-space
                 break;
             case 'A':
                 $typeId = 3; // a-space

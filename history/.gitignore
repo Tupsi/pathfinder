@@ -1,4 +1,10 @@
 #ignore all files in this dir...
 *
+<<<<<<< HEAD
 #... except for this one.
 !.gitignore
+=======
+
+#... except for this one.
+!.gitignore 
+>>>>>>> 726e8e4f52f97a79f52b0b95b16388993950798f

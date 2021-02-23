@@ -236,6 +236,9 @@ define([], () => {
                 'L': {
                     class: 'pf-system-sec-lowSec'
                 },
+                'T': {
+                    class: 'pf-system-sec-triglav'
+                },
                 '0.0': {
                     class: 'pf-system-sec-nullSec'
                 },
@@ -564,7 +567,8 @@ define([], () => {
             4: 'K162 - H',
             5: 'K162 - L',
             6: 'K162 - 0.0',
-            7: 'K162 - C12 Thera'
+            7: 'K162 - T',
+            8: 'K162 - C12 Thera'
         }
     };
 });
